@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bharathi Ganesh S | DevOps & Site Reliability Engineer</title>
+<meta name="description" content="Portfolio of Bharathi Ganesh S, DevOps and Site Reliability Engineer: AWS, Azure, Kubernetes, Terraform, CI/CD.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+:root{--bg:#0b0f19;--card:#111827;--bd:#1f2937;--em:#10b981;--cy:#06b6d4;--tx:#f3f4f6;--tx2:#94a3b8}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Inter,sans-serif;line-height:1.6;
+background-image:radial-gradient(circle at 15% 0,rgba(16,185,129,.08),transparent 40%),radial-gradient(circle at 90% 20%,rgba(6,182,212,.07),transparent 40%)}
+.mono{font-family:'JetBrains Mono',monospace}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--cy);outline-offset:2px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+main>section{display:none;padding:100px 0 48px}main>section.active{display:block;animation:fadeIn .25s ease}@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.links a{padding:6px 2px;border-bottom:2px solid transparent}.links a.on{color:var(--em);border-color:var(--em)}#mobileMenu a.on{color:var(--em)}
+h2{font-size:1.9rem;margin:0 0 8px;font-weight:700}
+.sub{color:var(--tx2);margin:0 0 32px;max-width:680px}
+.card{background:rgba(17,24,39,.8);backdrop-filter:blur(8px);border:1px solid var(--bd);border-radius:12px;padding:20px;transition:border-color .25s,box-shadow .25s,transform .25s}
+.card:hover{border-color:var(--em);box-shadow:0 0 0 1px rgba(16,185,129,.3),0 8px 30px rgba(16,185,129,.12);transform:translateY(-2px)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:8px;border:1px solid var(--bd);background:var(--card);color:var(--tx);font:500 .9rem Inter;cursor:pointer;transition:.2s}
+.btn:hover{border-color:var(--cy);box-shadow:0 0 14px rgba(6,182,212,.25)}
+.btn.pri{background:var(--em);border-color:var(--em);color:#04110c;font-weight:600}
+.btn.pri:hover{box-shadow:0 0 18px rgba(16,185,129,.45)}
+.badge{font:400 .72rem 'JetBrains Mono',monospace;padding:2px 8px;border-radius:6px;background:#0b1220;border:1px solid var(--bd);color:var(--cy);display:inline-block;margin:2px 2px 0 0}
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(11,15,25,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--bd)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.brand{font:500 .8rem 'JetBrains Mono';letter-spacing:.04em}.brand b{color:var(--em)}
+.links{display:flex;gap:18px;font-size:.85rem;color:var(--tx2)}.links a:hover{color:var(--em)}
+.status{font:500 .72rem 'JetBrains Mono';color:var(--em);background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.35);border-radius:999px;padding:6px 12px;cursor:pointer;white-space:nowrap}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--em);margin-right:6px;animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(16,185,129,.6)}70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
+#menuBtn{display:none;background:none;border:1px solid var(--bd);color:var(--tx);border-radius:8px;padding:8px 10px;cursor:pointer}
+#mobileMenu{display:none;flex-direction:column;gap:4px;padding:8px 20px 16px;border-top:1px solid var(--bd)}
+#mobileMenu.open{display:flex}#mobileMenu a{padding:8px 0;color:var(--tx2)}
+#menuBtn,#mobileMenu{display:none!important}
+@media(max-width:1000px){.links{position:absolute;top:60px;left:0;right:0;overflow-x:auto;white-space:nowrap;gap:22px;padding:6px 20px;background:rgba(11,15,25,.95);border-bottom:1px solid var(--bd);scrollbar-width:none}.links::-webkit-scrollbar{display:none}main>section{padding-top:130px!important}}
+@media(max-width:520px){.brand span{display:none}}
+/* hero + terminal */
+
+.term{border:1px solid var(--bd);border-radius:12px;background:#080c14;overflow:hidden;box-shadow:0 0 40px rgba(16,185,129,.1)}
+.term-h{display:flex;align-items:center;gap:8px;padding:10px 14px;background:#0f1522;border-bottom:1px solid var(--bd);font:400 .78rem 'JetBrains Mono';color:var(--tx2)}
+.tl{width:12px;height:12px;border-radius:50%}
+.term-b{padding:18px;font:400 .85rem/1.65 'JetBrains Mono';height:340px;overflow-y:auto}
+.term-b .p{color:var(--em)}.term-b .k{color:var(--cy)}.term-b .m{color:var(--tx2)}
+.term-b pre{margin:0;white-space:pre-wrap;font:inherit}
+.cur{display:inline-block;width:8px;height:1em;background:var(--em);vertical-align:-2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.term-i{display:flex;gap:8px;padding:10px 18px;border-top:1px solid var(--bd);font:400 .85rem 'JetBrains Mono'}
+.term-i input{flex:1;background:none;border:0;color:var(--tx);font:inherit;outline:none}
+.hero-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:32px;align-items:center}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+.avatar{width:104px;height:104px;border-radius:50%;border:2px solid var(--em);box-shadow:0 0 24px rgba(16,185,129,.35);overflow:hidden;display:flex;align-items:center;justify-content:center;background:var(--card);font:600 1.8rem 'JetBrains Mono';color:var(--em);margin-bottom:16px}.avatar img{width:100%;height:100%;object-fit:cover}
+.hero h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.1;margin:0 0 8px;font-weight:700}
+.grad{background:linear-gradient(90deg,var(--em),var(--cy));-webkit-background-clip:text;background-clip:text;color:transparent}
+/* timeline */
+.tline{border-left:2px solid var(--bd);margin-left:8px;padding-left:28px;position:relative}
+.tline .item{position:relative;margin-bottom:24px}
+.tline .item:before{content:"";position:absolute;left:-37px;top:8px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--em)}
+.tline ul{padding-left:18px;color:var(--tx2);margin:10px 0 0}.tline li{margin:4px 0}
+/* skills */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.chip{font:400 .75rem 'JetBrains Mono';padding:6px 12px;border-radius:999px;border:1px solid var(--bd);background:var(--card);color:var(--tx2);cursor:pointer}
+.chip[aria-pressed=true]{border-color:var(--em);color:var(--em);background:rgba(16,185,129,.1)}
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+@media(max-width:1000px){.bento{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:700px){.bento{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:480px){.bento{grid-template-columns:repeat(2,1fr)}}
+.skill{text-align:center;padding:16px 8px;cursor:pointer;background:var(--card);border:1px solid var(--bd);border-radius:12px;color:var(--tx);font:inherit;transition:.25s}
+.skill:hover,.skill[aria-pressed=true]{border-color:var(--cy);box-shadow:0 0 16px rgba(6,182,212,.3);transform:translateY(-2px)}
+.skill i{font-size:2rem;display:block;margin-bottom:6px;color:var(--tx)}
+.skill b{display:block;font-size:.8rem;font-weight:500}.skill small{font:400 .62rem 'JetBrains Mono';color:var(--tx2)}
+/* projects */
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:1000px){.pgrid{grid-template-columns:repeat(2,1fr)}}@media(max-width:680px){.pgrid{grid-template-columns:1fr}}
+.proj{display:flex;flex-direction:column;gap:10px}
+.proj.dim{opacity:.25;filter:grayscale(1)}.proj.hit{border-color:var(--cy);box-shadow:0 0 24px rgba(6,182,212,.25)}
+.proj h3{margin:0;font-size:1.05rem}.proj p{margin:0;color:var(--tx2);font-size:.88rem}
+.proj ul{margin:0;padding-left:18px;color:var(--tx2);font-size:.82rem}
+.lab{font:400 .68rem 'JetBrains Mono';color:#fbbf24;border:1px dashed #fbbf24;border-radius:6px;padding:4px 8px}
+.spark path{stroke-dasharray:400;stroke-dashoffset:400;animation:draw 2.5s ease forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+/* certs, stats */
+.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.tag-ok{color:var(--em);border-color:var(--em)}.tag-plan{color:#fbbf24;border-color:#fbbf24}
+.sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px}
+.stat b{display:block;font:600 1.7rem 'JetBrains Mono';color:var(--em)}.stat span{font-size:.8rem;color:var(--tx2)}
+/* modal + toast */
+.ov{position:fixed;inset:0;background:rgba(3,6,12,.75);backdrop-filter:blur(4px);z-index:80;display:none;align-items:center;justify-content:center;padding:16px}
+.ov.open{display:flex}
+.modal{background:var(--card);border:1px solid var(--bd);border-radius:14px;max-width:820px;width:100%;max-height:88vh;overflow-y:auto;padding:24px;position:relative}
+.modal h3{margin:16px 0 6px;color:var(--cy);font-size:.95rem}.modal p,.modal li{color:var(--tx2);font-size:.88rem}
+.x{position:absolute;top:12px;right:12px;background:none;border:1px solid var(--bd);color:var(--tx);border-radius:8px;width:34px;height:34px;cursor:pointer}
+#toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,20px);background:var(--em);color:#04110c;font-weight:600;padding:10px 18px;border-radius:8px;opacity:0;pointer-events:none;transition:.3s;z-index:90}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+.sm td{padding:6px 0;font:400 .82rem 'JetBrains Mono'}.sm td:first-child{color:var(--tx2);padding-right:20px}
+footer{border-top:1px solid var(--bd);padding:36px 0;color:var(--tx2);font-size:.88rem}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center}
+.foot a:hover{color:var(--em)}
+#top{position:fixed;right:18px;bottom:18px;z-index:40;display:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.spark path{stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+<!-- ===== EDITABLE PERSONAL DETAILS: change everything in this block ===== -->
+<script>
+const CONFIG = {
+  name: "Bharathi Ganesh S",
+  email: "39bharathiganeshs@gmail.com",
+  linkedin: "https://linkedin.com/in/bharathiganeshsankarapandi",
+  github: "https://github.com/bharathi-39",
+  photo: "https://media.licdn.com/dms/image/v2/D5603AQEaBlCGQPPwJA/profile-displayphoto-scale_400_400/B56aDzVYN6IQAg-/0/1790788867133?e=1796256000&v=beta&t=xnfOTLl3M5fm7Jd9zs5ZtbC6wGrJ-FwV4sO-Uxy_n3s",
+  resume: "Bharathi_Ganesh_S_Resume_10.11.26.pdf",
+  repoBase: "https://github.com/bharathi-39"
+};
+</script>
+
+<nav aria-label="Main navigation">
+ <div class="wrap nav-in">
+  <a href="#overview" class="brand">BHARATHI.GANESH <span>| <b>DEVOPS &amp; SRE ENGINEER</b></span></a>
+  <div class="links">
+   <a href="#overview">Overview</a><a href="#experience">Experience</a><a href="#projects">Projects</a>
+   <a href="#skills">Technical Skills</a><a href="#certs">Certifications</a><a href="#education">Education &amp; Awards</a><a href="#contact">Contact</a>
+  </div>
+  <button class="status" id="statusBtn" aria-haspopup="dialog"><span class="dot"></span>SYSTEM STATUS: OPERATIONAL</button>
+  <button id="menuBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu"><i class="fa-solid fa-bars"></i></button>
+ </div>
+ <div id="mobileMenu" class="wrap">
+  <a href="#overview">Overview</a><a href="#experience">Experience</a><a href="#projects">Projects</a>
+  <a href="#skills">Technical Skills</a><a href="#certs">Certifications</a><a href="#education">Education &amp; Awards</a><a href="#contact">Contact</a>
+ </div>
+</nav>
+
+<main>
+<section id="overview" class="hero"><div class="wrap hero-grid">
+ <div>
+  <div class="avatar" id="avatar" role="img" aria-label="Profile photo of Bharathi Ganesh S">BG</div>
+  <p class="mono" style="color:var(--cy);margin:0 0 8px">// DevOps &amp; Site Reliability Engineer</p>
+  <h1>Bharathi Ganesh S<br><span class="grad">Reliable infrastructure, automated delivery.</span></h1>
+  <p style="color:var(--tx2)">DevOps and Site Reliability Engineer with 2.5+ years of experience in cloud operations, infrastructure automation, production support, incident management, and reliability engineering. Skilled in AWS, Azure, Kubernetes, Terraform, and CI/CD. Currently pursuing a PGDM in Business Analytics &amp; Supply Chain Management, combining technical depth with business and stakeholder skills.</p>
+  <div class="row" style="margin-top:18px">
+   <a class="btn pri" id="resumeBtn" href="#"><i class="fa-solid fa-download"></i>Download Resume</a>
+   <a class="btn" href="#projects"><i class="fa-solid fa-diagram-project"></i>Explore Projects</a>
+   <a class="btn ext" data-link="github" href="#"><i class="fa-brands fa-github"></i>GitHub Profile</a>
+   <a class="btn" href="#contact"><i class="fa-solid fa-envelope"></i>Contact Me</a>
+  </div>
+ </div>
+ <div class="term" role="region" aria-label="Interactive terminal">
+  <div class="term-h"><span class="tl" style="background:#ef4444"></span><span class="tl" style="background:#f59e0b"></span><span class="tl" style="background:#22c55e"></span><span style="margin-left:8px">bash — portfolio@devops</span></div>
+  <div class="term-b" id="out" aria-live="polite"><span class="p">$ </span><span id="typed"></span><span class="cur" id="cur"></span></div>
+  <label class="term-i"><span class="p" style="color:var(--em)">$</span><input id="cmd" autocomplete="off" spellcheck="false" aria-label="Terminal command input" placeholder="type 'help' and press Enter"></label>
+ </div>
+</div></section>
+
+<section id="highlights" style="padding-top:0" data-with="overview"><div class="wrap">
+ <div class="sgrid">
+  <div class="card stat"><b data-n="2.5" data-s="+">0</b><span>Years of experience</span></div>
+  <div class="card stat"><b data-n="3+" data-s="">0</b><span>Certifications completed</span></div>
+  <div class="card stat"><b data-n="1000" data-s="+">0</b><span>Employees across globe reached via accessibility advocacy</span></div>
+  <div class="card stat"><b>AWS + Azure</b><span>Cloud operations</span></div>
+  <div class="card stat"><b>IaC</b><span>Terraform &amp; Ansible</span></div>
+  <div class="card stat"><b>CI/CD</b><span>GitHub Actions &amp; Jenkins</span></div>
+ </div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+ <h2>Professional Experience</h2><p class="sub">Production responsibilities, kept separate from personal lab projects.</p>
+ <div class="tline">
+  <div class="item card">
+   <h3 style="margin:0">Accenture</h3>
+   <p class="mono" style="color:var(--cy);font-size:.8rem;margin:4px 0">Application &amp; Cloud Engineer (DevOps / SRE) · Bengaluru, India</p>
+   <p class="mono" style="color:var(--tx2);font-size:.75rem;margin:0">April 2024 – Present</p>
+   <ul>
+    <li>Managed and supported cloud-native applications on AWS using Docker, Kubernetes (EKS) and microservices for reliability, scalability and high availability.</li>
+    <li>Administered Kubernetes clusters: Deployments, Services, ConfigMaps, Secrets, Ingress Controllers, Load Balancers and Helm charts.</li>
+    <li>Built and maintained CI/CD pipelines with GitHub Actions covering integration, image builds, vulnerability validation and Kubernetes deployments.</li>
+    <li>Wrote reusable Terraform modules for VPCs, subnets, route tables, gateways, IAM roles, security groups and EC2.</li>
+    <li>Automated provisioning, configuration, patching and deployments with Ansible playbooks.</li>
+    <li>Managed the Docker image lifecycle in Amazon ECR for repeatable deployments across environments.</li>
+    <li>Monitored infrastructure health and application performance with AWS CloudWatch and Grafana.</li>
+    <li>Handled incident management, troubleshooting and production support within SLAs; performed RCA on production incidents and drove preventive actions.</li>
+    <li>Worked across AWS and Azure (EKS, EC2, Azure VMs, VNets, Azure AD, Azure Monitor) with development, infrastructure and cloud teams on DevOps and SRE practices.</li>
+    <li>Used Git, GitHub, GitHub Copilot and Amazon Q to speed up automation, scripting and troubleshooting.</li>
+   </ul>
+  </div>
+  <div class="item card">
+   <h3 style="margin:0">Perfect Mastics &amp; Allied Products</h3>
+   <p class="mono" style="color:var(--cy);font-size:.8rem;margin:4px 0">System Administrator</p>
+   <p class="mono" style="color:var(--tx2);font-size:.75rem;margin:0">July 2023 – March 2024</p>
+   <ul>
+    <li>Resolved issues with Windows OS, Outlook, VPN, printers, MS Office and basic network connectivity.</li>
+    <li>Used remote desktop tools to keep user downtime low.</li>
+    <li>Met SLA and KPI targets, improving first call resolution and reducing average handling time.</li>
+    <li>Documented procedures, troubleshooting guides and knowledge base articles.</li>
+   </ul>
+  </div>
+  <div class="item card" style="border-style:dashed">
+   <h3 style="margin:0">Hands-on DevOps Lab Projects <span class="badge" style="color:#fbbf24">personal / not production</span></h3>
+   <p style="color:var(--tx2);margin:8px 0 0;font-size:.9rem">Self-directed projects covering EKS deployments, CI/CD, Infrastructure as Code and monitoring. See <a href="#projects" style="color:var(--em)">Projects</a>. These are lab environments, not production workloads.</p>
+  </div>
+ </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+ <h2>Featured DevOps &amp; Cloud Projects</h2><p class="sub">Select a skill below to highlight related projects. Metrics shown are lab/demonstration values, not production results.</p>
+ <div class="filters" id="filterBar" role="group" aria-label="Filter projects by skill"></div>
+ <div class="pgrid" id="pgrid"></div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+ <h2>Technical Skills</h2><p class="sub">Click a skill to highlight the projects that use it.</p>
+ <div id="bentoWrap"></div>
+</div></section>
+
+<section id="certs"><div class="wrap">
+ <h2>Certifications</h2><p class="sub">Completed and planned certifications are labelled clearly.</p>
+ <div class="cgrid" id="cgrid"></div>
+</div></section>
+
+<section id="education"><div class="wrap">
+ <h2>Education &amp; Recognition</h2><p class="sub">Academic background, leadership and awards.</p>
+ <h3 class="mono" style="font-size:.8rem;color:var(--cy);margin:0 0 10px">Education</h3>
+ <div class="cgrid">
+  <div class="card"><i class="fa-solid fa-graduation-cap" style="font-size:1.6rem;color:var(--em)"></i><h3 style="margin:8px 0 2px;font-size:1rem">PGDM, Business Analytics &amp; Supply Chain Management</h3><p style="margin:0;color:var(--tx2);font-size:.85rem">BIMTECH · 2024 – 2026</p><span class="badge">CGPA 8.6</span></div>
+  <div class="card"><i class="fa-solid fa-graduation-cap" style="font-size:1.6rem;color:var(--em)"></i><h3 style="margin:8px 0 2px;font-size:1rem">Master of Science</h3><p style="margin:0;color:var(--tx2);font-size:.85rem">Loyola College of Arts &amp; Science · 2021 – 2023</p><span class="badge">CGPA 8.6</span></div>
+  <div class="card"><i class="fa-solid fa-graduation-cap" style="font-size:1.6rem;color:var(--em)"></i><h3 style="margin:8px 0 2px;font-size:1rem">Bachelor of Science</h3><p style="margin:0;color:var(--tx2);font-size:.85rem">Loyola College of Arts &amp; Science · 2018 – 2021</p><span class="badge">CGPA 8.5</span></div>
+ </div>
+ <h3 class="mono" style="font-size:.8rem;color:var(--cy);margin:28px 0 10px">Leadership &amp; Awards</h3>
+ <div class="cgrid">
+  <div class="card"><i class="fa-solid fa-universal-access" style="font-size:1.6rem;color:var(--em)"></i><h3 style="margin:8px 0 2px;font-size:1rem">Accessibility Advocate</h3><p style="margin:0 0 6px;color:var(--tx2);font-size:.85rem">Accenture Global Accessibility Center</p>
+   <ul style="margin:0;padding-left:18px;color:var(--tx2);font-size:.85rem"><li>Ran accessibility awareness campaigns and workshops reaching 1,000+ employees across locations.</li><li>Supported DEI programs and collaborated with stakeholders to improve adoption.</li><li>Supported executive briefings, client visits and leadership events with technology readiness.</li></ul></div>
+  <div class="card"><i class="fa-solid fa-award" style="font-size:1.6rem;color:#fbbf24"></i><h3 style="margin:8px 0 2px;font-size:1rem">ACE Award</h3><p style="margin:0 0 6px;color:var(--tx2);font-size:.85rem">Accenture</p>
+   <p style="margin:0;color:var(--tx2);font-size:.85rem">Recognized for leading end-to-end technology readiness, stakeholder coordination and execution for a global client experience event with multiple business teams and executives.</p></div>
+ </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+ <h2>Contact</h2><p class="sub">Open to DevOps and cloud roles. Update the placeholders in the CONFIG block to publish your real details.</p>
+ <div class="cgrid">
+  <div class="card"><p class="mono" style="color:var(--cy);margin:0;font-size:.75rem">Email</p><p id="emailTxt" style="margin:4px 0 12px;word-break:break-all"></p><button class="btn pri" id="copyBtn"><i class="fa-regular fa-copy"></i>Copy Email</button></div>
+  <div class="card"><p class="mono" style="color:var(--cy);margin:0;font-size:.75rem">LinkedIn</p><p style="margin:4px 0 12px">Connect professionally</p><a class="btn ext" data-link="linkedin" href="#"><i class="fa-brands fa-linkedin"></i>Open LinkedIn</a></div>
+  <div class="card"><p class="mono" style="color:var(--cy);margin:0;font-size:.75rem">GitHub</p><p style="margin:4px 0 12px">Browse repositories</p><a class="btn ext" data-link="github" href="#"><i class="fa-brands fa-github"></i>Open GitHub</a></div>
+  <div class="card"><p class="mono" style="color:var(--cy);margin:0;font-size:.75rem">Resume</p><p style="margin:4px 0 12px">PDF download</p><a class="btn" id="resumeBtn2" href="#"><i class="fa-solid fa-file-arrow-down"></i>Download Resume</a></div>
+ </div>
+</div></section>
+</main>
+
+<footer><div class="wrap foot">
+ <div><b class="mono" style="color:var(--tx)">BHARATHI.GANESH</b><br>Building reliable infrastructure and automated delivery.<br><span id="yr"></span> Bharathi Ganesh S. All rights reserved.</div>
+ <div class="row" style="margin:0"><a href="#overview">Overview</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div>
+ <div style="font-size:1.4rem;display:flex;gap:16px"><a class="ext" data-link="linkedin" href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a><a class="ext" data-link="github" href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a></div>
+</div></footer>
+<a href="#overview" id="top" class="btn" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
+
+<!-- status modal -->
+<div class="ov" id="statusOv" role="dialog" aria-modal="true" aria-labelledby="stT"><div class="modal">
+ <button class="x" data-close aria-label="Close">&times;</button>
+ <h3 id="stT" style="margin-top:0;color:var(--em)">Infrastructure Status</h3>
+ <p class="lab" style="display:inline-block">Simulated portfolio metrics, not real monitoring data.</p>
+ <table class="sm" style="margin-top:12px"><tr><td>System uptime</td><td>99.98%</td></tr><tr><td>Avg latency</td><td id="lat">42 ms</td></tr><tr><td>Deployment</td><td style="color:var(--em)">Succeeded (demo)</td></tr><tr><td>Cloud region</td><td>ap-south-1 (demo)</td></tr><tr><td>Infra health</td><td style="color:var(--em)">All checks passing (demo)</td></tr></table>
+</div></div>
+<!-- architecture modal -->
+<div class="ov" id="archOv" role="dialog" aria-modal="true" aria-labelledby="arT"><div class="modal">
+ <button class="x" data-close aria-label="Close">&times;</button>
+ <h3 id="arT" style="margin-top:0;font-size:1.15rem;color:var(--em)"></h3>
+ <div id="arBody"></div>
+</div></div>
+<div id="toast" role="status" aria-live="polite">Copied to clipboard!</div>
+
+<script>
+/* ---------- Data ---------- */
+const PROJECTS = [
+ {id:"eks",title:"Three-Tier Application on AWS EKS",repo:"three-tier-eks",
+  desc:"Designed and deployed a three-tier application (React frontend, Flask backend, PostgreSQL database) using Docker and Kubernetes.",
+  tech:["AWS","EKS","ECR","Docker","Kubernetes","Flask","React","PostgreSQL","Helm","GitHub Actions","YAML"],
+  skills:["AWS","Amazon EKS","Docker","Kubernetes","YAML","ECR","EKS","Helm","GitHub Actions"],
+  impl:["Containerized frontend and backend services","Managed image lifecycle in Amazon ECR and deployed with Helm charts","Configured Deployments, Services, ConfigMaps, Secrets","Troubleshot image-pull errors and pod failures"],
+  flow:["Client","React","Flask API","PostgreSQL"],spark:"M0,40 L30,32 L60,34 L90,22 L120,24 L150,14 L180,12",
+  ci:"Build image → push to ECR → apply manifests → rollout status check",
+  mon:"kubectl logs/describe for pod failures; CloudWatch for node and cluster signals."},
+ {id:"cicd",title:"CI/CD with Jenkins & GitHub Actions",repo:"cicd-pipeline",
+  desc:"Developed an automated CI/CD workflow to build, test, containerize, and deploy application components.",
+  tech:["Jenkins","GitHub Actions","Git","Docker","AWS ECR","AWS EKS","YAML","Groovy"],
+  skills:["Jenkins","GitHub Actions","Git","GitHub","Docker","ECR","Amazon EKS","YAML","Deployment Automation"],
+  impl:["Integrated GitHub repos with automated pipelines","Configured test and Docker build stages","Automated image publishing to Amazon ECR","Built Kubernetes deployment workflows"],
+  flow:["Git push","Pipeline","Docker build","ECR","EKS"],spark:"M0,36 L30,30 L60,34 L90,20 L120,22 L150,12 L180,10",
+  ci:"Commit triggers pipeline → test → build → push → deploy → validate",
+  mon:"Pipeline logs and stage status; rerun failed stages after fixing the cause."},
+ {id:"iac",title:"AWS Infrastructure with Terraform & Ansible",repo:"aws-terraform-ansible",
+  desc:"Automated cloud infrastructure provisioning and configuration management using Infrastructure as Code.",
+  tech:["AWS","Terraform","Ansible","EC2","VPC","IAM","Security Groups","Linux"],
+  skills:["AWS","Terraform","Ansible","EC2","VPC","IAM","Linux"],
+  impl:["Provisioned VPCs, public/private subnets, security groups, EC2","Configured servers with Ansible playbooks","Organized reusable Terraform configurations","Reduced manual configuration effort"],
+  flow:["Terraform","VPC + EC2","Ansible","Configured hosts"],spark:"M0,30 L30,28 L60,26 L90,24 L120,18 L150,16 L180,14",
+  ci:"terraform plan → apply → Ansible playbook run",
+  mon:"Terraform state and plan diffs; Ansible run output for drift and failures."},
+ {id:"obs",title:"Kubernetes Monitoring & Observability",repo:"k8s-observability",
+  desc:"Implemented a monitoring solution for containerized workloads and infrastructure using Prometheus and Grafana.",
+  tech:["Kubernetes","Prometheus","Grafana","Alertmanager","Docker","Linux"],
+  skills:["Kubernetes","Prometheus","Grafana","Alertmanager","Docker","Linux","CloudWatch"],
+  impl:["Configured Prometheus metrics collection","Created Grafana dashboards","Monitored workloads and resource utilization","Configured alerting for infrastructure health"],
+  flow:["Pods","Prometheus","Alertmanager","Grafana"],spark:"M0,26 L30,24 L60,28 L90,18 L120,20 L150,16 L180,14",
+  ci:"Deploy monitoring stack → scrape targets → build dashboards → test alerts",
+  mon:"Dashboards for CPU, memory, restarts; alerts routed through Alertmanager."}
+];
+const SKILLS = [
+ ["Cloud Platforms",[["AWS","devicon-amazonwebservices-plain-wordmark"],["Microsoft Azure","devicon-azure-plain"]]],
+ ["AWS Services",[["EC2","fa-solid fa-server"],["VPC","fa-solid fa-network-wired"],["IAM","fa-solid fa-user-shield"],["Amazon EKS","devicon-kubernetes-plain"],["ECR","devicon-docker-plain"],["CloudWatch","fa-solid fa-chart-line"]]],
+ ["Azure Services",[["Virtual Machines","fa-solid fa-desktop"],["Virtual Network","fa-solid fa-network-wired"],["Azure AD","fa-solid fa-id-badge"],["AKS","devicon-kubernetes-plain"],["Azure Monitor","fa-solid fa-chart-line"]]],
+ ["Containers",[["Docker","devicon-docker-plain"],["Kubernetes","devicon-kubernetes-plain"],["Helm","devicon-helm-original"]]],
+ ["IaC & Config",[["Terraform","devicon-terraform-plain"],["Ansible","devicon-ansible-plain"],["CloudFormation","fa-solid fa-cloud"]]],
+ ["CI/CD & VCS",[["Jenkins","devicon-jenkins-plain"],["GitHub Actions","devicon-githubactions-plain"],["Git","devicon-git-plain"],["GitHub","devicon-github-original"]]],
+ ["Observability",[["Prometheus","devicon-prometheus-original"],["Grafana","devicon-grafana-original"],["CloudWatch","fa-solid fa-chart-line"]]],
+ ["OS & Scripting",[["Linux","devicon-linux-plain"],["Bash","devicon-bash-plain"],["Python","devicon-python-plain"],["Windows","devicon-windows8-original"]]],
+ ["Atlassian & ITSM",[["Jira","devicon-jira-plain"],["Confluence","devicon-confluence-plain"],["ServiceNow","fa-solid fa-ticket"]]]
+];
+const CERTS = [
+ ["AWS Certified Cloud Practitioner","Amazon Web Services","Completed",true,"fa-brands fa-aws"],
+ ["AWS Certified AI Practitioner","Amazon Web Services","Completed",true,"fa-brands fa-aws"],
+ ["Advanced Mac Troubleshooting (Apple)","Koenig Solutions","Completed",true,"fa-brands fa-apple"],
+ ["Certified Kubernetes Administrator (CKA)","CNCF / Linux Foundation","Planned",false,"devicon-kubernetes-plain"],
+ ["HashiCorp Terraform Associate","HashiCorp","Planned",false,"devicon-terraform-plain"],
+ ["AWS Solutions Architect Associate","Amazon Web Services","Planned",false,"fa-brands fa-aws"]
+];
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+/* ---------- Links / config ---------- */
+function setupLinks(){
+  $$('.ext').forEach(a=>{a.href=CONFIG[a.dataset.link]||'#';a.target='_blank';a.rel='noopener noreferrer';});
+  $('#emailTxt').textContent=CONFIG.email;
+  if(CONFIG.photo){const im=new Image();im.alt='';im.onload=()=>{$('#avatar').textContent='';$('#avatar').appendChild(im);};im.src=CONFIG.photo;}
+  ['#resumeBtn','#resumeBtn2'].forEach(s=>{const a=$(s);
+    if(CONFIG.resume){a.href=CONFIG.resume;a.setAttribute('download','');}
+    else a.addEventListener('click',e=>{e.preventDefault();toast('Resume link not set yet. Add it in CONFIG.');});});
+  $('#yr').textContent='\u00A9 '+new Date().getFullYear();
+}
+
+/* ---------- Toast ---------- */
+let tt;function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('show'),2200);}
+$('#copyBtn').addEventListener('click',async()=>{
+  try{await navigator.clipboard.writeText(CONFIG.email);}
+  catch(e){const i=document.createElement('textarea');i.value=CONFIG.email;i.style.position='fixed';i.style.opacity='0';document.body.appendChild(i);i.select();
+    try{document.execCommand('copy');}catch(_){toast('Press Ctrl+C to copy: '+CONFIG.email);i.remove();return;}i.remove();}
+  toast('Copied to clipboard!');
+});
+
+/* ---------- Nav ---------- */
+$('#menuBtn').addEventListener('click',e=>{const o=$('#mobileMenu').classList.toggle('open');e.currentTarget.setAttribute('aria-expanded',o);});
+$$('#mobileMenu a').forEach(a=>a.addEventListener('click',()=>{$('#mobileMenu').classList.remove('open');$('#menuBtn').setAttribute('aria-expanded',false);}));
+$('#top').addEventListener('click',e=>{e.preventDefault();scrollTo({top:0,behavior:'smooth'});});
+addEventListener('scroll',()=>{$('#top').style.display=scrollY>500?'inline-flex':'none';});
+
+/* ---------- Modals (Escape, focus return, overlay click) ---------- */
+let lastFocus=null;
+function openModal(id){lastFocus=document.activeElement;const o=$(id);o.classList.add('open');$('.x',o).focus();}
+function closeModals(){$$('.ov.open').forEach(o=>o.classList.remove('open'));if(lastFocus)lastFocus.focus();}
+$$('.ov').forEach(o=>o.addEventListener('click',e=>{if(e.target===o||e.target.hasAttribute('data-close'))closeModals();}));
+addEventListener('keydown',e=>{if(e.key==='Escape')closeModals();});
+$('#statusBtn').addEventListener('click',()=>openModal('#statusOv'));
+setInterval(()=>{$('#lat').textContent=(38+Math.floor(Math.random()*10))+' ms';},3000);
+
+/* ---------- Skills + filter ---------- */
+let active=null;
+function renderSkills(){
+  $('#bentoWrap').innerHTML=SKILLS.map(([cat,items])=>`<h3 class="mono" style="font-size:.8rem;color:var(--cy);margin:22px 0 10px">${esc(cat)}</h3><div class="bento">`+
+   items.map(([n,ic])=>`<button class="skill" data-skill="${esc(n)}" aria-pressed="false"><i class="${ic}" aria-hidden="true"></i><b>${esc(n)}</b><small>${esc(cat)}</small></button>`).join('')+`</div>`).join('');
+  $$('.skill').forEach(b=>b.addEventListener('click',()=>setFilter(active===b.dataset.skill?null:b.dataset.skill,true)));
+}
+function renderFilterBar(){
+  const names=["All Skills","AWS","Docker","Kubernetes","Terraform","Ansible","Jenkins","GitHub Actions","Prometheus","Grafana"];
+  $('#filterBar').innerHTML=names.map(n=>`<button class="chip" data-f="${n}" aria-pressed="${n==='All Skills'}">${n}</button>`).join('');
+  $$('.chip').forEach(c=>c.addEventListener('click',()=>setFilter(c.dataset.f==='All Skills'?null:c.dataset.f,false)));
+}
+function setFilter(s,scroll){
+  active=s;
+  $$('.skill').forEach(b=>b.setAttribute('aria-pressed',b.dataset.skill===s));
+  $$('.chip').forEach(c=>c.setAttribute('aria-pressed',(s===null&&c.dataset.f==='All Skills')||c.dataset.f===s));
+  $$('.proj').forEach(p=>{const pr=PROJECTS.find(x=>x.id===p.dataset.id);
+    const hit=s&&pr.skills.some(k=>k.toLowerCase()===s.toLowerCase()||(s==='AWS'&&['AWS','EC2','VPC','IAM'].includes(k)));
+    p.classList.toggle('hit',!!hit);p.classList.toggle('dim',!!s&&!hit);});
+  if(s&&scroll)showTab('projects');
+  if(s&&!$$('.proj.hit').length)toast('No lab project uses '+s+' yet.');
+}
+
+/* ---------- Projects ---------- */
+function flowSvg(nodes){
+  const w=100*nodes.length+20,g=nodes.map((n,i)=>`<g><rect x="${10+i*100}" y="12" width="84" height="32" rx="6" fill="#0b1220" stroke="#10b981"/><text x="${52+i*100}" y="32" fill="#f3f4f6" font-size="9" text-anchor="middle" font-family="JetBrains Mono">${esc(n)}</text></g>`+(i<nodes.length-1?`<path d="M${94+i*100},28 h12" stroke="#06b6d4" marker-end="url(#a)"/>`:'')).join('');
+  return `<svg viewBox="0 0 ${w} 56" style="width:100%;height:auto" role="img" aria-label="Flow: ${esc(nodes.join(' to '))}"><defs><marker id="a" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6z" fill="#06b6d4"/></marker></defs>${g}</svg>`;
+}
+function renderProjects(){
+  $('#pgrid').innerHTML=PROJECTS.map(p=>`<article class="card proj" data-id="${p.id}">
+   <h3>${esc(p.title)}</h3><p>${esc(p.desc)}</p>
+   ${flowSvg(p.flow)}
+   <div>${p.tech.map(t=>`<span class="badge">${esc(t)}</span>`).join('')}</div>
+   <ul>${p.impl.map(i=>`<li>${esc(i)}</li>`).join('')}</ul>
+   <span class="lab">Lab/demo metric, not a production result</span>
+   <svg class="spark" viewBox="0 0 180 48" style="width:100%;height:48px" role="img" aria-label="Sample trend sparkline (demo data)"><path d="${p.spark}" fill="none" stroke="#10b981" stroke-width="2"/></svg>
+   <div class="row"><a class="btn ext-repo" href="${esc(CONFIG.repoBase+p.repo)}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i>GitHub</a>
+   <button class="btn" data-arch="${p.id}"><i class="fa-solid fa-sitemap"></i>Live Architecture</button></div></article>`).join('');
+  $$('[data-arch]').forEach(b=>b.addEventListener('click',()=>showArch(b.dataset.arch)));
+}
+function showArch(id){
+  const p=PROJECTS.find(x=>x.id===id);
+  $('#arT').textContent=p.title+' — Architecture';
+  $('#arBody').innerHTML=`<p class="lab" style="display:inline-block">Lab architecture for a personal project.</p>
+   <h3>Architecture diagram &amp; application workflow</h3>${flowSvg(p.flow)}
+   <h3>Infrastructure components</h3><div>${p.tech.map(t=>`<span class="badge">${esc(t)}</span>`).join('')}</div>
+   <h3>CI/CD execution flow</h3><p>${esc(p.ci)}</p>
+   <h3>Deployment process</h3><ul>${p.impl.map(i=>`<li>${esc(i)}</li>`).join('')}</ul>
+   <h3>Monitoring &amp; troubleshooting</h3><p>${esc(p.mon)}</p>`;
+  openModal('#archOv');
+}
+
+/* ---------- Certifications ---------- */
+function renderCerts(){
+  $('#cgrid').innerHTML=CERTS.map(([n,o,s,done,ic])=>`<div class="card"><i class="${ic}" style="font-size:1.8rem;color:${done?'var(--em)':'var(--tx2)'}"></i>
+   <h3 style="margin:8px 0 2px;font-size:1rem">${esc(n)}</h3><p style="margin:0;color:var(--tx2);font-size:.85rem">${esc(o)}</p>
+   <span class="badge ${done?'tag-ok':'tag-plan'}" style="margin-top:8px">${done?'✔ Completed':'In progress / planned'}</span>
+   <p class="mono" style="font-size:.72rem;color:var(--tx2);margin:10px 0 0">Date: ${done?'<!-- EDIT -->MM/YYYY':'Not earned yet'}<br>Credential ID: ${done?'XXXX-XXXX (placeholder)':'N/A'}</p>
+   ${done?`<a class="btn ext" style="margin-top:10px" data-link="linkedin" href="#">Verification link (placeholder)</a>`:''}</div>`).join('');
+  $$('#cgrid .ext').forEach(a=>{a.href=CONFIG.linkedin||'#';a.target='_blank';a.rel='noopener noreferrer';});
+}
+
+/* ---------- Terminal ---------- */
+const out=$('#out'),cmdIn=$('#cmd');
+const T={
+ help:()=>"Available commands:\n  help        show this list\n  whoami      professional introduction\n  skills      technical skills\n  projects    featured projects\n  experience  work experience\n  uptime      simulated infrastructure uptime\n  contact     contact information\n  clear       clear the terminal",
+ whoami:()=>"Bharathi Ganesh S - DevOps & Site Reliability Engineer\n2.5+ years in cloud operations, infrastructure automation, production\nsupport and incident management. AWS, Azure, Kubernetes, Terraform, CI/CD.",
+ skills:()=>SKILLS.map(([c,i])=>c+": "+i.map(x=>x[0]).join(", ")).join("\n"),
+ projects:()=>PROJECTS.map((p,i)=>(i+1)+". "+p.title).join("\n"),
+ experience:()=>"Accenture - Application & Cloud Engineer (DevOps / SRE), Apr 2024 - Present\nPerfect Mastics & Allied Products - System Administrator, Jul 2023 - Mar 2024",
+ uptime:()=>"[simulated] uptime 99.98%  latency "+(38+Math.floor(Math.random()*10))+"ms  region ap-south-1\nThese are demo values, not real monitoring data.",
+ contact:()=>"Email:    "+CONFIG.email+"\nLinkedIn: "+CONFIG.linkedin+"\nGitHub:   "+CONFIG.github
+};
+function print(html){out.insertAdjacentHTML('beforeend',html);out.scrollTop=out.scrollHeight;}
+function run(raw){
+  const c=raw.trim().toLowerCase();if(!c)return;
+  if(c==='clear'){out.innerHTML='';return;}
+  print(`<div><span class="p">$ </span>${esc(raw)}</div>`);
+  print(T[c]?`<pre class="m">${esc(T[c]())}</pre>`:`<pre style="color:#f87171">command not found: ${esc(c)}. Type 'help'.</pre>`);
+}
+cmdIn.addEventListener('keydown',e=>{if(e.key==='Enter'){run(cmdIn.value);cmdIn.value='';}});
+function typeIntro(){
+  const s="whoami",el=$('#typed');let i=0;
+  const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  const step=()=>{if(i<s.length){el.textContent+=s[i++];setTimeout(step,reduce?0:140);}
+    else{$('#cur').remove();print(`<pre class="m">${esc(T.whoami())}\n\nType 'help' for commands.</pre>`);}};
+  setTimeout(step,500);
+}
+
+/* ---------- Counters (only real values) ---------- */
+function counters(){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;io.unobserve(e.target);
+    const n=parseFloat(e.target.dataset.n),s=e.target.dataset.s||'';let t=0;
+    const f=()=>{t+=.04;const v=Math.min(n,n*t);e.target.textContent=(n%1?v.toFixed(1):Math.round(v))+(t>=1?s:'');if(t<1)requestAnimationFrame(f);};f();}),{threshold:.5});
+  $$('[data-n]').forEach(e=>io.observe(e));
+}
+
+/* ---------- Tabs ---------- */
+const TABS=['overview','experience','projects','skills','certs','education','contact'];
+function showTab(id,push){
+  if(!TABS.includes(id))id='overview';
+  $$('main>section').forEach(sec=>sec.classList.toggle('active',sec.id===id||sec.dataset.with===id));
+  $$('.links a,#mobileMenu a').forEach(a=>{const on=a.getAttribute('href')==='#'+id;a.classList.toggle('on',on);on?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current');});
+  const on=$('.links a.on');if(on)on.scrollIntoView({block:'nearest',inline:'center'});
+  if(push!==false&&location.hash!=='#'+id)history.pushState(null,'','#'+id);
+  scrollTo(0,0);
+}
+document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a||a.id==='top')return;
+  const id=a.getAttribute('href').slice(1);if(TABS.includes(id)){e.preventDefault();showTab(id);}});
+addEventListener('popstate',()=>showTab(location.hash.slice(1),false));
+showTab(location.hash.slice(1),false);
+
+setupLinks();renderSkills();renderFilterBar();renderProjects();renderCerts();typeIntro();counters();
+</script>
+</body>
+</html>
