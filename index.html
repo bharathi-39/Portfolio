@@ -116,6 +116,7 @@ footer{border-top:1px solid var(--bd);padding:36px 0;color:var(--tx2);font-size:
 const CONFIG = {
   name: "Bharathi Ganesh S",
   email: "39bharathiganeshs@gmail.com",
+  phone: "+91 9361440497",
   linkedin: "https://linkedin.com/in/bharathiganeshsankarapandi",
   github: "https://github.com/bharathi-39",
   photo: "https://media.licdn.com/dms/image/v2/D5603AQEaBlCGQPPwJA/profile-displayphoto-scale_400_400/B56aDzVYN6IQAg-/0/1790788867133?e=1796256000&v=beta&t=xnfOTLl3M5fm7Jd9zs5ZtbC6wGrJ-FwV4sO-Uxy_n3s",
@@ -250,6 +251,22 @@ const CONFIG = {
    href="#"
    style="margin:4px 0 12px;word-break:break-all;color:var(--em);display:block">
 </a><button class="btn pri" id="copyBtn"><i class="fa-regular fa-copy"></i>Copy Email</button></div>
+<div class="card">
+  <p class="mono" style="color:var(--cy);margin:0;font-size:.75rem">
+    Mobile
+  </p>
+  
+
+  <a id="phoneTxt"
+     href="#"
+     style="margin:4px 0 12px;display:block;color:var(--em)">
+  </a>
+
+  <button class="btn pri" id="copyPhoneBtn">
+    <i class="fa-regular fa-copy"></i>
+    Copy Number
+  </button>
+</div>
   <div class="card"><p class="mono" style="color:var(--cy);margin:0;font-size:.75rem">LinkedIn</p><p style="margin:4px 0 12px">Connect professionally</p><a class="btn ext" data-link="linkedin" href="#"><i class="fa-brands fa-linkedin"></i>Open LinkedIn</a></div>
   <div class="card"><p class="mono" style="color:var(--cy);margin:0;font-size:.75rem">GitHub</p><p style="margin:4px 0 12px">Browse repositories</p><a class="btn ext" data-link="github" href="#"><i class="fa-brands fa-github"></i>Open GitHub</a></div>
   <div class="card"><p class="mono" style="color:var(--cy);margin:0;font-size:.75rem">Resume</p><p style="margin:4px 0 12px">PDF download</p><a class="btn" id="resumeBtn2" href="#"><i class="fa-solid fa-file-arrow-down"></i>Download Resume</a></div>
@@ -328,9 +345,9 @@ const SKILLS = [
  ["OS & Scripting",[["Linux","devicon-linux-plain"],["Bash","devicon-bash-plain"],["Python","devicon-python-plain"],["Windows","devicon-windows8-original"]]],
  ["Atlassian & ITSM",[["Jira","devicon-jira-plain"],["Confluence","devicon-confluence-plain"],["ServiceNow","fa-solid fa-ticket"]]]
 ];
-const CERTS = [
- ["AWS Certified Cloud Practitioner","Amazon Web Services","https://www.credly.com/badges/c77a68c3-3d07-4cf6-a188-bd8806e7fde6/public_url",true,"fa-brands fa-aws"],
- ["AWS Certified AI Practitioner","Amazon Web Services","https://www.credly.com/badges/62666e93-eb52-4a35-bc8a-4610ffd6a710/public_url",true,"fa-brands fa-aws"],
+const CERTS = [  
+ ["AWS Certified Cloud Practitioner","Amazon Web Services","https://www.credly.com/badges/62666e93-eb52-4a35-bc8a-4610ffd6a710/public_url",true,"fa-brands fa-aws"],
+ ["AWS Certified AI Practitioner","Amazon Web Services","https://www.credly.com/badges/c77a68c3-3d07-4cf6-a188-bd8806e7fde6/public_url",true,"fa-brands fa-aws"],
  ["Advanced Mac Troubleshooting (Apple)","Koenig Solutions","https://www.linkedin.com/safety/go/?url=www.koenig-solutions.com%2Fcertificate-authenticator&urlhash=SpVt&mt=vxzo6400Hv2xnU661-nPOuCE6s07oa8NIaSFYuHhBSMr-yTbYaI-YMUH_zIsGPOUql39_q6lOdptCtbhkQ-uxuAl44GL&isSdui=true&lipi=urn%3Ali%3Apage%3Ad_flagship3_profil",true,"fa-brands fa-apple"],
  ["Certified Kubernetes Administrator (CKA)","CNCF / Linux Foundation","",false,"devicon-kubernetes-plain"],
  ["HashiCorp Terraform Associate","HashiCorp","",false,"devicon-terraform-plain"],
@@ -343,6 +360,8 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",
 function setupLinks(){
   $$('.ext').forEach(a=>{a.href=CONFIG[a.dataset.link]||'#';a.target='_blank';a.rel='noopener noreferrer';});
   $('#emailTxt').textContent = CONFIG.email;
+  $('#phoneTxt').textContent = CONFIG.phone;
+$('#phoneTxt').href = `tel:${CONFIG.phone}`;
 $('#emailTxt').href = `mailto:${CONFIG.email}`;
   if(CONFIG.photo){const im=new Image();im.alt='';im.onload=()=>{$('#avatar').textContent='';$('#avatar').appendChild(im);};im.src=CONFIG.photo;}
   ['#resumeBtn','#resumeBtn2'].forEach(s=>{const a=$(s);
@@ -358,6 +377,16 @@ $('#copyBtn').addEventListener('click',async()=>{
   catch(e){const i=document.createElement('textarea');i.value=CONFIG.email;i.style.position='fixed';i.style.opacity='0';document.body.appendChild(i);i.select();
     try{document.execCommand('copy');}catch(_){toast('Press Ctrl+C to copy: '+CONFIG.email);i.remove();return;}i.remove();}
   toast('Copied to clipboard!');
+});
+
+$('#copyPhoneBtn').addEventListener('click', async()=>{
+  try{
+    await navigator.clipboard.writeText(CONFIG.phone);
+  }
+  catch(e){
+    console.log(e);
+  }
+  toast('Phone number copied!');
 });
 
 /* ---------- Nav ---------- */
